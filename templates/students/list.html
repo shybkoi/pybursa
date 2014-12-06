@@ -33,8 +33,8 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/">Home</a></li>
-            <li><a href="/students/">Student list</a></li>
+            <li><a href="/">Home</a></li>
+            <li class="active"><a href="/students/">Student list</a></li>
             <li><a href="/courses/">Courses list</a></li>
             <li><a href="/coaches/">Coaches</a></li>
           </ul>
@@ -43,12 +43,17 @@
     </nav>
 
     <div class="container">
+      <h1>IT Bursa students list:</h1>
+      <ul class="list-group">
+        {% for student in students %}
+          <li class="list-group-item">
+            <a href="/students/{{ student.id }}/">
+              {{student.name}}  {{student.surname}}
+            </a>
+          </li>
 
-      <div class="starter-template">
-        <h1>IT Bursa homepage</h1>
-        <p class="lead"> Professional programming courses.
-        <br> Python, JavaScript, Ruby and more.</p>
-      </div>
+        {% endfor %}
+      </ul>
 
     </div><!-- /.container -->
 

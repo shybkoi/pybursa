@@ -33,22 +33,38 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="/students/">Student list</a></li>
             <li><a href="/courses/">Courses list</a></li>
-            <li><a href="/coaches/">Coaches</a></li>
+            <li class="active"><a href="/coaches/">Coaches</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
     <div class="container">
+      <h1>IT Bursa coaches:</h1>
+      <table class="table">
+      <tr>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Course</th>
+      </tr>
+        {% for coach in coaches %}
+          <tr>
+            <td><a href="/coaches/{{ coach.id }}/">
+              {{coach.name}} {{coach.surname}}
+            </a></td>
+            <td><a href="/coaches/{{ coach.id }}/">
+              {{coach.position}}
+            </a></td>
+            <td><a href="/coaches/{{ coach.id }}/">
+              {{coach.email}}
+            </a></td>
+          <tr>
 
-      <div class="starter-template">
-        <h1>IT Bursa homepage</h1>
-        <p class="lead"> Professional programming courses.
-        <br> Python, JavaScript, Ruby and more.</p>
-      </div>
+        {% endfor %}
+      </table>
 
     </div><!-- /.container -->
 
