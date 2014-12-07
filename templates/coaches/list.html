@@ -44,27 +44,12 @@
 
     <div class="container">
       <h1>IT Bursa coaches:</h1>
-      <table class="table">
-      <tr>
-        <th>Name</th>
-        <th>Position</th>
-        <th>Course</th>
-      </tr>
+      <ol class="list-group">
         {% for coach in coaches %}
-          <tr>
-            <td><a href="/coaches/{{ coach.id }}/">
-              {{coach.name}} {{coach.surname}}
-            </a></td>
-            <td><a href="/coaches/{{ coach.id }}/">
-              {{coach.position}}
-            </a></td>
-            <td><a href="/coaches/{{ coach.id }}/">
-              {{coach.email}}
-            </a></td>
-          <tr>
-
+          <li><a href="/coaches/{{ coach.id }}/">
+            {{coach.name}} {{coach.surname}} ({{coach.position}})</a></li>
         {% endfor %}
-      </table>
+      </ol>
 
     </div><!-- /.container -->
 
