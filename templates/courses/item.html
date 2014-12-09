@@ -38,6 +38,9 @@
             <li><a href="/courses/">Courses list</a></li>
             <li><a href="/coaches/">Coaches</a></li>
           </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/admin/">Admin site</a></li>
+          </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
@@ -50,7 +53,10 @@
         <li class="list-group-item">Finish date: {{course.finish_date}}</li>
         <li class="list-group-item">Teacher: {{course.teacher}}
             {{course.teacher.name}}</li>
-        <li class="list-group-item">Assistent: {{course.assistant}}</li>
+        {% if course.assistant != None %}
+            <li class="list-group-item">Assistent: {{course.assistant}}
+                {{course.assistant.name}}</li>
+        {% endif %}
       </ul>
     </div><!-- /.container -->
 

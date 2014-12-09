@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 class Coach(models.Model):
 
     def __unicode__(self):
@@ -15,3 +16,4 @@ class Coach(models.Model):
                                            ('assistant','assistant')),
                                   default='teacher')
     user = models.ForeignKey(User, default=1)
+    dossier = models.OneToOneField('extradata.Dossier', blank=True, null=True)

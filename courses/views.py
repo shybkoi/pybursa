@@ -7,4 +7,5 @@ def course_list(request):
 
 def course_item(request, course_id):
     course = Course.objects.get(id=int(course_id))
+    print course.assistant
     return render(request, 'courses/item.html', {'course': course})
