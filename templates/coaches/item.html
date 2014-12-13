@@ -54,6 +54,9 @@
         {% if course != None %}
           <li class="list-group-item">Course: {{course.name}}</li>
         {% endif %}
+        {% if coach.dossier != None %}
+          <li class="list-group-item">Dossier: {{coach.dossier}}</li>
+        {% endif %}
       </ul>
     </div><!-- /.container -->
 

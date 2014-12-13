@@ -53,6 +53,9 @@
         <li class="list-group-item">Email: {{student.email}}</li>
         <li class="list-group-item">Phone number: {{student.phone}}</li>
         <li class="list-group-item">Package: {{student.package}}</li>
+        {% if student.dossier != None %}
+          <li class="list-group-item">Dossier: {{student.dossier}}</li>
+        {% endif %}
       </ul>
     </div><!-- /.container -->
 

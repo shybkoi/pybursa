@@ -57,6 +57,9 @@
             <li class="list-group-item">Assistent: {{course.assistant}}
                 {{course.assistant.name}}</li>
         {% endif %}
+        {% if course.venue != None %}
+          <li class="list-group-item">Venue: {{course.venue}}
+        {% endif %}
       </ul>
     </div><!-- /.container -->
 
