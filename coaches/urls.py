@@ -3,6 +3,6 @@ from coaches import views
 
 
 urlpatterns = patterns('',
-    url(r'^$', views.coaches_list),
-    url(r'^(?P<coach_id>\d+)/$', views.coach_item),
+    url(r'^$', views.coaches_list, name='list'),
+    url(r'^(?P<coach_id>\d+)/$', views.coach_item, name='item'),
 )
