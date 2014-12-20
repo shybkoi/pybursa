@@ -78,6 +78,9 @@ sup {
   line-height: 0;
   vertical-align: baseline;
 }
+span.special_class {
+  background-color: silver;
+}
 sup {
   top: -.5em;
 }
@@ -1222,6 +1225,9 @@ ul,
 ol {
   margin-top: 0;
   margin-bottom: 10px;
+}
+ul.errorlist {
+  color: red;
 }
 ul ul,
 ol ul,

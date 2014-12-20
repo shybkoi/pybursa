@@ -3,6 +3,7 @@
   {% block 'contents' %}
     <div class="container">
       <h1>Course name: {{course.name}}</h1>
+      {% include "controlpl.html" with add_url='courses:add' edit_url='courses:edit' del_url='courses:remove' item_id=course.id %}
       <ul class="list-group">
         <li class="list-group-item">Description: {{course.description}}</li>
         <li class="list-group-item">Start date: {{course.start_date}}</li>

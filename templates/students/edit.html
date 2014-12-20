@@ -1,0 +1,32 @@
+{% extends "students/base.html" %}
+
+
+  {% block 'contents' %}
+    <div class="container">
+      <h1>Student edit item:</h1>
+      <p>* - required fields</p>
+          <form method='POST'>
+            {% csrf_token %}
+            {#{{ form.as_p }}#}
+            <ul class="list-group">
+              {% for field in form %}
+                  <li class="list-group-item">
+                    {% if field.errors %}
+                      <div class="alert alert-danger" role="alert">
+                        {{ field.errors }}
+                      </div>
+                    {% endif %}
+                    {% if field.field.required %}
+                      <span class="special_class">*
+                      {{ field.label_tag }} {{ field }}</span>
+                    {% else %}
+                      {{ field.label_tag }} {{ field }}
+                    {% endif %}
+                  </li>
+              {% endfor %}
+              <li class="list-group-item"><input  type="submit" value="Send">
+              </li>
+            </ul>
+          </form>
+    </div><!-- /.container -->
+  {% endblock %}

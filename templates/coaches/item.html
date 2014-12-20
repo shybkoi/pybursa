@@ -3,6 +3,7 @@
   {% block 'contents' %}
     <div class="container">
       <h1>Coach name: {{coach.name}} {{coach.surname}}</h1>
+      {% include "controlpl.html" with add_url='coaches:add' edit_url='coaches:edit' del_url='coaches:remove' item_id=coach.id %}
       <ul class="list-group">
         <li class="list-group-item">Position: {{coach.position}}</li>
         <li class="list-group-item">Email: {{coach.email}}</li>
