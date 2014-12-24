@@ -1,0 +1,12 @@
+{% extends "coaches/base.html" %}
+
+  {% block 'contents' %}
+    <div class="container">
+    <h1>Remov item: </h1>
+    <form action="" method="post">
+      {% csrf_token %}
+      <div>Do you want to remove {{ coach }}?</div>
+      <input type="submit" value="Yes" />
+    </form>
+    </div><!-- /.container -->
+  {% endblock %}

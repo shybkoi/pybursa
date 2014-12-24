@@ -3,9 +3,9 @@ from coaches import views
 
 
 urlpatterns = patterns('',
-    url(r'^$', views.coaches_list, name='list'),
-    url(r'^add/$', views.coach_edit, name='add'),
-    url(r'^edit/(?P<coach_id>\d+)/$', views.coach_edit, name='edit'),
-    url(r'^remove/(?P<coach_id>\d+)/$', views.coach_remove, name='remove'),
-    url(r'^(?P<coach_id>\d+)/$', views.coach_item, name='item'),
+    url(r'^$', views.CoachListView.as_view(), name='list'),
+    url(r'^add/$', views.CoachCreateView.as_view(), name='add'),
+    url(r'^edit/(?P<pk>\d+)/$', views.CoachUpdateView.as_view(), name='edit'),
+    url(r'^remove/(?P<pk>\d+)/$', views.CoachDeleteView.as_view(), name='remove'),
+    url(r'^(?P<pk>\d+)/$', views.CoachDetailView.as_view(), name='item'),
 )

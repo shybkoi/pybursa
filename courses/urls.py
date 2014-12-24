@@ -3,9 +3,9 @@ from courses import views
 
 
 urlpatterns = patterns('',
-    url(r'^$', views.course_list, name='list'),
-    url(r'^add/$', views.course_edit, name='add'),
-    url(r'^edit/(?P<course_id>\d+)/$', views.course_edit, name='edit'),
-    url(r'^remove/(?P<course_id>\d+)/$', views.course_remove, name='remove'),
-    url(r'^(?P<course_id>\d+)/$', views.course_item, name='item'),
+    url(r'^$', views.CourseListView.as_view(), name='list'),
+    url(r'^add/$', views.CourseCreateView.as_view(), name='add'),
+    url(r'^edit/(?P<pk>\d+)/$', views.CourseUpdateView.as_view(), name='edit'),
+    url(r'^remove/(?P<pk>\d+)/$', views.CourseDeleteView.as_view(), name='remove'),
+    url(r'^(?P<pk>\d+)/$', views.CourseDetailView.as_view(), name='item'),
 )
