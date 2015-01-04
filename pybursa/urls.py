@@ -3,6 +3,7 @@ from django.views.generic import TemplateView
 
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
+from pybursa.views import ComplaintView
 
 
 urlpatterns = patterns('',
@@ -11,5 +12,7 @@ urlpatterns = patterns('',
     url(r'^students/', include('students.urls', namespace="students")),
     url(r'^courses/', include('courses.urls', namespace="courses")),
     url(r'^coaches/', include('coaches.urls', namespace="coaches")),
+    url(r'^complaint/$', ComplaintView.as_view(), name="complaint"),
     url(r'^admin/', include(admin.site.urls), name='admin'),
+    url(r'^i18n/', include('django.conf.urls.i18n')),
 )

@@ -1,10 +1,10 @@
 {% extends "students/base.html" %}
-
+{% load i18n %}
 
   {% block 'contents' %}
     <div class="container">
-      <h1>Student edit item:</h1>
-      <p>* - required fields</p>
+      <h1>{% trans "Student edit item" %}:</h1>
+      <p>* - {% trans "required fields" %}</p>
           <form method='POST'>
             {% csrf_token %}
             {#{{ form.as_p }}#}
@@ -24,7 +24,7 @@
                     {% endif %}
                   </li>
               {% endfor %}
-              <li class="list-group-item"><input  type="submit" value="Send">
+              <li class="list-group-item"><input  type="submit" value="{% trans "Send" %}">
               </li>
             </ul>
           </form>

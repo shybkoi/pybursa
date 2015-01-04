@@ -1,0 +1,234 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-01-04 14:36+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: pybursa/settings.py:81
+msgid "Russian"
+msgstr ""
+
+#: pybursa/settings.py:82
+msgid "English"
+msgstr ""
+
+#: pybursa/views.py:17
+msgid "Theme"
+msgstr "Тема"
+
+#: pybursa/views.py:18
+msgid "Coach"
+msgstr "Учитель"
+
+#: pybursa/views.py:19
+msgid "Guilty"
+msgstr "Жалоба на"
+
+#: pybursa/views.py:20
+msgid "Complaint text"
+msgstr "Суть жалобы"
+
+#: pybursa/views.py:44
+msgid "Complaint was send."
+msgstr "Жалоба отправлена."
+
+#: pybursa/views.py:46
+msgid "Connection error. Try later."
+msgstr "Поблемы со связью. Попробуйте позже."
+
+#: templates/courses/list.html:9
+msgid "Name"
+msgstr "Наименование"
+
+#: students/views.py:12 templates/courses/list.html:9
+msgid "Name"
+msgstr "Имя"
+
+#: students/views.py:13
+msgid "Surname"
+msgstr "Фамилия"
+
+#: students/views.py:14
+msgid "Date of bith"
+msgstr "День рождения"
+
+#: students/views.py:16
+#, fuzzy
+#| msgid "Phone number:"
+msgid "Phone number"
+msgstr "Номер телефона:"
+
+#: students/views.py:17
+#, fuzzy
+#| msgid "Package:"
+msgid "Package"
+msgstr "Пакет:"
+
+#: students/views.py:19
+#, fuzzy
+#| msgid "Courses"
+msgid "Course"
+msgstr "Курсы"
+
+#: students/views.py:20
+#, fuzzy
+#| msgid "Dossier:"
+msgid "Dossier"
+msgstr "Досье:"
+
+#: templates/admin/base.html:30
+msgid "Welcome,"
+msgstr ""
+
+#: templates/admin/base.html:36
+msgid "Documentation"
+msgstr ""
+
+#: templates/admin/base.html:39
+msgid "Change password"
+msgstr ""
+
+#: templates/admin/base.html:41
+msgid "Log out"
+msgstr ""
+
+#: templates/admin/base.html:50 templates/header.html:21
+msgid "Home"
+msgstr ""
+
+#: templates/admin/base_site.html:3
+msgid "Django site admin"
+msgstr ""
+
+#: templates/admin/index.html:20
+#, python-format
+msgid "Models in the %(name)s application"
+msgstr ""
+
+#: templates/admin/index.html:31
+msgid "Add"
+msgstr ""
+
+#: templates/admin/index.html:37
+msgid "Change"
+msgstr ""
+
+#: templates/admin/index.html:47
+msgid "You don't have permission to edit anything."
+msgstr ""
+
+#: templates/admin/index.html:55
+msgid "Recent Actions"
+msgstr ""
+
+#: templates/admin/index.html:56
+msgid "My Actions"
+msgstr ""
+
+#: templates/admin/index.html:60
+msgid "None available"
+msgstr ""
+
+#: templates/admin/index.html:74
+msgid "Unknown content"
+msgstr ""
+
+#: templates/coaches/list.html:6
+msgid "IT Bursa coaches:"
+msgstr "Преподаватели IT Bursa:"
+
+#: templates/coaches/list.html:28 templates/controlpl.html:8
+#: templates/courses/list.html:39 templates/students/list.html:30
+msgid " Add item"
+msgstr " Добавить"
+
+#: templates/complaint.html:31
+msgid "Complaint form:"
+msgstr "Форма жалобы:"
+
+#: templates/complaint.html:32 templates/students/edit.html:7
+msgid "required fields"
+msgstr "обязательные поля"
+
+#: templates/complaint.html:51
+msgid "Send"
+msgstr "Отправить"
+
+#: templates/controlpl.html:12
+msgid " Edit item"
+msgstr " Редактировать"
+
+#: templates/controlpl.html:16
+msgid " Remove"
+msgstr " Удалить"
+
+#: templates/courses/list.html:6
+msgid "IT Bursa courses list:"
+msgstr "Список курсов IT Bursa:"
+
+#: templates/courses/list.html:10
+msgid "Start date"
+msgstr "Дата начала"
+
+#: templates/courses/list.html:11
+msgid "Finish date"
+msgstr "Дата окончания"
+
+#: templates/header.html:22
+msgid "Students"
+msgstr "Студенты"
+
+#: templates/header.html:23
+msgid "Courses"
+msgstr "Курсы"
+
+#: templates/header.html:24
+msgid "Coaches"
+msgstr "Преподаватели"
+
+#: templates/header.html:25
+msgid "Complaint"
+msgstr "Жалоба"
+
+#: templates/header.html:28
+msgid "Admin site"
+msgstr "Админка"
+
+#: templates/students/edit.html:6
+msgid "Student edit item:"
+msgstr "Редактировать запись о студенте:"
+
+#: templates/students/item.html:6
+msgid "Student:"
+msgstr "Студент:"
+
+#: templates/students/item.html:10
+msgid "course:"
+msgstr "курс:"
+
+#: templates/students/item.html:12
+msgid "Phone number:"
+msgstr "Номер телефона:"
+
+#: templates/students/item.html:13
+msgid "Package:"
+msgstr "Пакет:"
+
+#: templates/students/item.html:15
+msgid "Dossier:"
+msgstr "Досье:"

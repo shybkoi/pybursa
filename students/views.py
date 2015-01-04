@@ -3,20 +3,21 @@ from django import forms
 from students.models import Student
 from courses.models import Course
 from extradata.models import Dossier
+from django.utils.translation import ugettext_lazy as _
 
 
 class StudentForm(forms.Form):
     CHOICES = (('Standart', 'Standart'),
                ('Gold', 'Gold'))
-    student_name = forms.CharField(max_length=100)
-    student_surname = forms.CharField(max_length=255)
-    student_date_of_birth = forms.DateField()
+    student_name = forms.CharField(label=_("Name"), max_length=100)
+    student_surname = forms.CharField(label=_("Surname"), max_length=255)
+    student_date_of_birth = forms.DateField(label=_("Date of bith"))
     student_email = forms.EmailField()
-    student_phone = forms.CharField(max_length=15)
-    student_package = forms.ChoiceField(widget=forms.RadioSelect,
+    student_phone = forms.CharField(label=_("Phone number"), max_length=15)
+    student_package = forms.ChoiceField(label=_("Package"), widget=forms.RadioSelect,
                                         choices=CHOICES)
-    student_course = forms.ModelChoiceField(queryset=Course.objects.all(),)
-    student_dossier = forms.ModelChoiceField(queryset=Dossier.objects.all(),required=False)
+    student_course = forms.ModelChoiceField(label=_("Course"), queryset=Course.objects.all(),)
+    student_dossier = forms.ModelChoiceField(label=_("Dossier"), queryset=Dossier.objects.all(),required=False)
 
 
 

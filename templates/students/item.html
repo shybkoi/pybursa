@@ -1,18 +1,18 @@
 {% extends "students/base.html" %}
-
+{% load i18n %}
 
   {% block 'contents' %}
     <div class="container">
-      <h1>Student: {{student.surname}}  {{student.name}}</h1>
+      <h1>{% trans "Student" %}: {{student.surname}}  {{student.name}}</h1>
       {% include "controlpl.html" with add_url='students:add' edit_url='students:edit' del_url='students:remove' item_id=student.id %}
       <ul class="list-group">
         <li class="list-group-item">id: {{student.id}}</li>
-        <li class="list-group-item">course: {{student.course}}</li>
+        <li class="list-group-item">{% trans "course" %}: {{student.course}}</li>
         <li class="list-group-item">Email: {{student.email}}</li>
-        <li class="list-group-item">Phone number: {{student.phone}}</li>
-        <li class="list-group-item">Package: {{student.package}}</li>
+        <li class="list-group-item">{% trans "Phone number" %}: {{student.phone}}</li>
+        <li class="list-group-item">{% trans "Package" %}: {{student.package}}</li>
         {% if student.dossier != None %}
-          <li class="list-group-item">Dossier: {{student.dossier}}</li>
+          <li class="list-group-item">{% trans "Dossier" %}: {{student.dossier}}</li>
         {% endif %}
       </ul>
     </div><!-- /.container -->

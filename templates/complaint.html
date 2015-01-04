@@ -1,0 +1,55 @@
+
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+
+{% block title %}Complaint{% endblock %}
+
+{% block 'header' %}
+  {% include "header.html" with active_complaint="active" %}
+{% endblock %}
+
+{% block 'contents' %}
+    <div class="container">
+        {% if messages %}
+          <ul class="list-group">
+          {% for message in messages %}
+            <li class="list-group-item">
+              <div
+                {% if message.tags = 'success' %}
+                  class="alert alert-success"
+                {% else %}
+                  class="alert alert-danger"
+                {% endif %} role="alert">
+                        {{ message }}
+              </div>
+            </li>
+          {% endfor %}
+          </ul>
+        {% endif %}
+        <h1>{% trans "Complaint form:" %}</h1>
+        <p>* - {% trans "required fields" %}</p>
+        <form method="post">
+          {% csrf_token %}
+          <ul class="list-group">
+            {% for field in form %}
+                  <li class="list-group-item">
+                    {% if field.errors %}
+                      <div class="alert alert-danger" role="alert">
+                        {{ field.errors }}
+                      </div>
+                    {% endif %}
+                    {% if field.field.required %}
+                      <span class="special_class">*
+                      {{ field.label_tag }} {{ field }}</span>
+                    {% else %}
+                      {{ field.label_tag }} {{ field }}
+                    {% endif %}
+                  </li>
+            {% endfor %}
+            <li class="list-group-item"><input  type="submit" value="{% trans "Send" %}"></li>
+          </ul>
+        </form>
+    </div><!-- /.container -->
+{% endblock %}
