@@ -7,6 +7,9 @@ from django import forms
 from coaches.models import Coach
 from courses.models import Course
 
+import logging
+logger = logging.getLogger(__name__)
+
 
 class CoachModelForm(forms.ModelForm):
     class Meta:
@@ -40,6 +43,14 @@ class CoachUpdateView(UpdateView):
     success_url = reverse_lazy('coaches:list')
     context_object_name = 'coach'
 
+    def form_valid(self, form):
+        try:
+            form.save()
+            logger.info("Coach %s %s was updated." % (form.cleaned_data['name'], form.cleaned_data['surname']))
+        except:
+            logger.error("Coach %s %s didn't update." % (form.cleaned_data['name'], form.cleaned_data['surname']))
+        return super(CoachUpdateView, self).form_valid(form)
+
 
 class CoachCreateView(CreateView):
     model = Coach
@@ -48,8 +59,25 @@ class CoachCreateView(CreateView):
     success_url = reverse_lazy('coaches:list')
     context_object_name = 'coach'
 
+    def form_valid(self, form):
+        try:
+            form.save()
+            logger.info("Coach %s %s was add." % (form.cleaned_data['name'], form.cleaned_data['surname']))
+        except:
+            logger.error("Coach %s %s didn't add." % (form.cleaned_data['name'], form.cleaned_data['surname']))
+        return super(CoachCreateView, self).form_valid(form)
+
 
 class CoachDeleteView(DeleteView):
     template_name = 'coaches/remove.html'
     model = Coach
     success_url = reverse_lazy('coaches:list')
+
+    def delete(self, request, *args, **kwargs):
+        coach_obj =  self.get_object()
+        try:
+            coach_obj.delete()
+            logger.info("Coach %s %s was removed." % (coach_obj.name, coach_obj.surname))
+        except:
+            logger.error("Coach %s %s didn't remove." % (coach_obj.name, coach_obj.surname))
+        return redirect(self.success_url)

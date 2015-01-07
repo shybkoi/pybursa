@@ -1,0 +1,21 @@
+Connection error. Try later.
+Connection error. Try later.
+WARNING 2015-01-07 15:18:31,117 views 2981 140401782441728 Connection error. Try later.
+2015-01-07 15:20:23,503 views WARNING Connection error. Try later.
+2015-01-07 15:24:42,507 pybursa.views ERROR Connection error. Try later.
+2015-01-07 15:36:00,908 students.views INFO Student Ivan Petroff was updated.
+2015-01-07 16:05:07,519 coaches.views INFO Coach Оксана Душенковская was updated.
+2015-01-07 16:11:49,371 coaches.views INFO Coach Илья Климов was updated.
+2015-01-07 16:12:12,508 coaches.views INFO Coach dfg dg was add.
+2015-01-07 16:14:37,840 coaches.views INFO Coach sfsadf sff was add.
+2015-01-07 16:16:04,565 coaches.views INFO Coach sfd sff was add.
+2015-01-07 16:16:56,943 coaches.views INFO Coach dfg dgg was add.
+2015-01-07 16:18:41,481 coaches.views INFO Coach sfd sdf was add.
+2015-01-07 16:20:21,358 coaches.views INFO Coach sff sdf was add.
+2015-01-07 16:22:55,150 coaches.views INFO Coach asd asd was add.
+2015-01-07 16:22:59,986 coaches.views INFO Coach asd asd was removed.
+2015-01-07 16:24:44,086 coaches.views INFO Coach hgc sdf was add.
+2015-01-07 16:25:32,170 coaches.views INFO Coach sdg sdf was add.
+2015-01-07 16:25:36,688 coaches.views INFO Coach sdg sdf was removed.
+2015-01-07 16:34:44,794 courses.views INFO Course sfd zsgfafgdfgdfg was created.
+2015-01-07 16:34:51,645 courses.views INFO Course sfd zsgfafgdfgdfg was removed.

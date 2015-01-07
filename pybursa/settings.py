@@ -36,10 +36,12 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'debug_toolbar',
+    'django_extensions',
     'students',
     'courses',
     'coaches',
-    'extradata'
+    'extradata',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -103,3 +105,45 @@ EMAIL_PORT = 1025
 MEDIA_ROOT = ""
 
 STATIC_ROOT = ""
+
+LOGGING = {
+    'version': 1,
+    'formatters': {
+        'verbose': {
+            'format': '%(asctime)s %(name)s %(levelname)s %(message)s'
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },},
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
+                    },
+         'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'debug.log'),
+            'formatter': 'verbose'
+                 },
+                },
+    'loggers': {
+        'pybursa': {
+            'handlers': ['console', 'file'],
+            'level': 'DEBUG',
+                    },
+        'students': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+                    },
+        'coaches': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+                    },
+        'courses': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+                    },
+                },
+            }

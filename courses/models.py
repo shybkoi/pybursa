@@ -13,7 +13,7 @@ class Course(models.Model):
                                            ('Ruby','Ruby on rails')),
                                   default='Python')
     name = models.CharField(max_length=255)
-    slug = models.SlugField()
+    slug = models.SlugField(blank=True, null=True)
     description = models.CharField(max_length=255)
     teacher = models.ForeignKey('coaches.Coach', default=1,
                                  related_name='teacher')

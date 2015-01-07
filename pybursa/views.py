@@ -11,6 +11,8 @@ from students.models import Student
 from django.utils.translation import ugettext
 from django.utils.translation import ugettext_lazy as _
 
+import logging
+logger = logging.getLogger(__name__)
 
 
 class ComplaintForm(forms.Form):
@@ -27,12 +29,10 @@ class ComplaintView(FormView):
     success_url = reverse_lazy('complaint')
 
     def form_valid(self, form):
-        print dir(self)
         theme = form.cleaned_data['theme']
         coach = form.cleaned_data['coach']
         student = form.cleaned_data['student']
         course = student.course.name
-        print course
         body = form.cleaned_data['body']
         email = form.cleaned_data['email']
         rendered = render_to_string('complaint_body.html',
@@ -42,7 +42,9 @@ class ComplaintView(FormView):
         try:
             send_mail(theme, rendered, email, ['heap_@bla.com'])
             messages.success(self.request, _("Complaint was sent."))
+            logger.info("Complaint was sent.")
         except:
             messages.error(self.request, _("Connection error. Try later."))
+            logger.error("Connection error. Try later.")
         return redirect(self.get_success_url())
 

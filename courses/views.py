@@ -6,6 +6,9 @@ from django.views.generic.edit import (CreateView,UpdateView, DeleteView)
 from django import forms
 from courses.models import Course
 
+import logging
+logger = logging.getLogger(__name__)
+
 
 class CourseModelForm(forms.ModelForm):
     class Meta:
@@ -30,6 +33,14 @@ class CourseUpdateView(UpdateView):
     success_url = reverse_lazy('courses:list')
     context_object_name = 'course'
 
+    def form_valid(self, form):
+        try:
+            form.save()
+            logger.info("Course %s %s was updated." % (form.cleaned_data['name'], form.cleaned_data['description']))
+        except:
+            logger.error("Course %s %s didn't update." % (form.cleaned_data['name'], form.cleaned_data['description']))
+        return super(CourseUpdateView, self).form_valid(form)
+
 
 class CourseCreateView(CreateView):
     model = Course
@@ -38,10 +49,27 @@ class CourseCreateView(CreateView):
     success_url = reverse_lazy('courses:list')
     context_object_name = 'course'
 
+    def form_valid(self, form):
+        try:
+            form.save()
+            logger.info("Course %s %s was created." % (form.cleaned_data['name'], form.cleaned_data['description']))
+        except:
+            logger.error("Course %s %s didn't create." % (form.cleaned_data['name'], form.cleaned_data['description']))
+        return super(CourseCreateView, self).form_valid(form)
+
 
 class CourseDeleteView(DeleteView):
     template_name = 'courses/remove.html'
     model = Course
     success_url = reverse_lazy('courses:list')
+
+    def delete(self, request, *args, **kwargs):
+        course_obj =  self.get_object()
+        try:
+            course_obj.delete()
+            logger.info("Course %s %s was removed." % (course_obj.name, course_obj.description))
+        except:
+            logger.error("Course %s %s didn't remove." % (course_obj.name, course_obj.description))
+        return redirect(self.success_url)
 
 

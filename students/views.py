@@ -5,6 +5,9 @@ from courses.models import Course
 from extradata.models import Dossier
 from django.utils.translation import ugettext_lazy as _
 
+import logging
+logger = logging.getLogger(__name__)
+
 
 class StudentForm(forms.Form):
     CHOICES = (('Standart', 'Standart'),
@@ -45,7 +48,11 @@ def students_edit(request, student_id=None):
             student.phone = form.cleaned_data['student_phone']
             student.course = form.cleaned_data['student_course']
             student.dossier = form.cleaned_data['student_dossier']
-            student.save()
+            try:
+                student.save()
+                logger.info("Student %s %s was updated." % (student.name, student.surname))
+            except:
+                logger.error("Student %s %s didn't update." % (student.name, student.surname))
             return redirect('students:list')
 
     else:
@@ -61,5 +68,9 @@ def students_edit(request, student_id=None):
 
 def students_remove(request, student_id):
     student = Student.objects.get(id=student_id)
-    student.delete()
+    try:
+        student.delete()
+        logger.info("Student %s %s was removed." % (student.name, student.surname))
+    except:
+        logger.error("Student %s %s didn't romove." % (student.name, student.surname))
     return redirect('students:list')
