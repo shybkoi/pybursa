@@ -151,7 +151,7 @@ msgstr "Форма для жалоб:"
 
 #: templates/complaint.html:32 templates/students/edit.html:7
 msgid "required fields"
-msgstr "обязательный поля"
+msgstr "обязательные поля"
 
 #: templates/complaint.html:51 templates/students/edit.html:27
 msgid "Send"

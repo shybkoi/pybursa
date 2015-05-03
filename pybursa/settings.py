@@ -147,3 +147,8 @@ LOGGING = {
                     },
                 },
             }
+
+try:
+    from local_settings import *
+except ImportError:
+    print "Warning! Local settings are not defined!"
